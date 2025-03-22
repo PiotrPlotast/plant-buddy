@@ -6,6 +6,7 @@ export default {
     slug: "plantbuddy",
     newArchEnabled: true,
     version: "1.0.0",
+    scheme: "plantbuddy",
     extra: {
       firebaseApiKey: process.env.FIREBASE_API_KEY,
       firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
