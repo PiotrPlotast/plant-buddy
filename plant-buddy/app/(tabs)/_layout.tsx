@@ -5,9 +5,16 @@ export default function Layout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#4CAF50", // Active tab color
-        tabBarInactiveTintColor: "gray",
-        headerShown: false, // Hide top header
+        tabBarStyle: {
+          height: 60,
+        },
+        tabBarActiveTintColor: "#4CAF50",
+        tabBarInactiveTintColor: "#A0A0A0",
+        headerShown: false,
+        tabBarLabelStyle: {
+          fontSize: 14,
+          fontWeight: "bold",
+        },
       }}
     >
       <Tabs.Screen
@@ -23,6 +30,15 @@ export default function Layout() {
         name="plants"
         options={{
           title: "Plants",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="leaf-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="social"
+        options={{
+          title: "Social",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="leaf-outline" size={size} color={color} />
           ),
