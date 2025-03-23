@@ -40,7 +40,7 @@ export default function Layout() {
         options={{
           title: "Social",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="leaf-outline" size={size} color={color} />
+            <Ionicons name="chatbubble-outline" size={size} color={color} />
           ),
         }}
       />
