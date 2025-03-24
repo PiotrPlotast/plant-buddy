@@ -1,21 +1,31 @@
-import { View, Text, Button } from "react-native";
-import { logout } from "../../api/auth";
+import { View, FlatList, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
+import PostCard from "../../components/PostCard";
+import styles from "../../styles/feedStyles";
+import { usePosts } from "../../hooks/usePosts";
 
 export default function Social() {
   const router = useRouter();
-
-  const handleLogout = async () => {
-    await logout();
-    router.replace("/login");
-  };
+  const { posts } = usePosts();
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ fontSize: 24, fontWeight: "bold" }}>
-        Welcome to plants! aaa🌱
-      </Text>
-      <Button title="Logout" onPress={handleLogout} />
+    <View style={styles.container}>
+      {/* 📝 Post List */}
+      <FlatList
+        data={posts}
+        renderItem={({ item }) => <PostCard post={item} />}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.feedList}
+      />
+
+      {/* ➕ Add Post Button */}
+      <TouchableOpacity
+        style={styles.addButton}
+        onPress={() => router.push("/add-post")}
+      >
+        <Ionicons name="add" size={32} color="white" />
+      </TouchableOpacity>
     </View>
   );
 }
