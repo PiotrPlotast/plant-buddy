@@ -1,9 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
-
+import { View, Text, StyleSheet, Button } from "react-native";
+import { useRouter } from "expo-router";
 export default function Onboarding() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Onboarding! 🌿</Text>
+      <Text>🌱 Welcome to PlantBuddy!2</Text>
+      <Button title="Next" onPress={() => router.push("/(onboarding)/step3")} />
     </View>
   );
 }
