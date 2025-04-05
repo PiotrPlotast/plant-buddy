@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet } from "react-native";
-
+import { View, Text, StyleSheet, Button } from "react-native";
+import { useRouter } from "expo-router";
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Good morning, User!🌿</Text>
@@ -8,6 +9,10 @@ export default function HomeScreen() {
         You’ve cared for your plants using Plant Buddy for 7 days straight!
       </Text>
       <Text style={styles.title}>Water your Monstera in 2 hours ⏳</Text>
+      <Button
+        title="Onboarding demo"
+        onPress={() => router.push("/(onboarding)/step1")}
+      />
     </View>
   );
 }
