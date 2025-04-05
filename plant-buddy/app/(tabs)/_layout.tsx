@@ -6,6 +6,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#4caf50",
+        headerShown: false,
       }}
     >
       <Tabs.Screen
@@ -23,6 +24,15 @@ export default function TabLayout() {
           title: "My Plants",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="leaf" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="socialfeed"
+        options={{
+          title: "Social Feed",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="chatbubbles" size={size} color={color} />
           ),
         }}
       />
